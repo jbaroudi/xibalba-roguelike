@@ -11,6 +11,9 @@ var flag_room_id = ""
 var max_rooms = 10
 var created_rooms = 0
 
+# Special doors that should never be locked (always available)
+var always_available_doors = ["tree", "door4"]
+
 # Room types
 enum RoomType {
 	TOWN,
@@ -21,8 +24,22 @@ enum RoomType {
 func _ready():
 	# Initialize the game state
 	visited_rooms[current_room_id] = true
+	# Clear any previously locked always-available doors
+	clear_always_available_doors()
 	# Randomly place flag in one of the potential rooms
 	place_flag_randomly()
+
+func clear_always_available_doors():
+	# Remove any locks on always-available doors
+	var keys_to_remove = []
+	for lock_key in locked_doors.keys():
+		for door_id in always_available_doors:
+			if lock_key.ends_with("_" + door_id):
+				keys_to_remove.append(lock_key)
+	
+	for key in keys_to_remove:
+		locked_doors.erase(key)
+		print("Cleared lock on always-available door: ", key)
 
 func place_flag_randomly():
 	# Generate a random room ID where the flag will be placed
@@ -35,11 +52,13 @@ func change_scene(scene_path: String, new_room_id: String, from_door_id: String 
 		print("Max rooms reached, cannot create new room")
 		return false
 		
-	# Lock the door we came from
-	if from_door_id != "":
+	# Lock the door we came from, unless it's an always-available door
+	if from_door_id != "" and not always_available_doors.has(from_door_id):
 		var lock_key = current_room_id + "_" + from_door_id
 		locked_doors[lock_key] = true
 		print("Locked door: ", lock_key)
+	elif from_door_id != "" and always_available_doors.has(from_door_id):
+		print("Door ", from_door_id, " is always available - not locking")
 	
 	# Mark new room as visited
 	if not visited_rooms.has(new_room_id):
@@ -55,6 +74,10 @@ func change_scene(scene_path: String, new_room_id: String, from_door_id: String 
 	return true
 
 func is_door_locked(room_id: String, door_id: String) -> bool:
+	# Always-available doors are never considered locked
+	if always_available_doors.has(door_id):
+		return false
+		
 	var lock_key = room_id + "_" + door_id
 	return locked_doors.has(lock_key)
 
