@@ -18,12 +18,12 @@ func _ready():
 func add_door_labels():
 	# Add small labels near each door to indicate what they lead to
 	var label_configs = [
-		{"position": Vector2(800, 320), "text": "Room 1", "door": 1},
-		{"position": Vector2(1080, 450), "text": "Room 2", "door": 2},
-		{"position": Vector2(1080, 750), "text": "Room 3", "door": 3},
-		{"position": Vector2(800, 880), "text": "Town", "door": 4},
-		{"position": Vector2(520, 750), "text": "Room 5", "door": 5},
-		{"position": Vector2(520, 450), "text": "Room 6", "door": 6}
+		{"position": Vector2(800, 370), "text": "Room 1", "door": 1},
+		{"position": Vector2(1030, 470), "text": "Room 2", "door": 2},
+		{"position": Vector2(1030, 730), "text": "Room 3", "door": 3},
+		{"position": Vector2(800, 830), "text": "Town", "door": 4},
+		{"position": Vector2(570, 730), "text": "Room 5", "door": 5},
+		{"position": Vector2(570, 470), "text": "Room 6", "door": 6}
 	]
 	
 	for config in label_configs:

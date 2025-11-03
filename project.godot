@@ -19,6 +19,12 @@ config/icon="res://icon.svg"
 
 GameManager="*res://GameManager.gd"
 
+[display]
+
+window/size/viewport_width=1600
+window/size/viewport_height=1200
+window/size/resizable=false
+
 [input]
 
 ui_accept={
