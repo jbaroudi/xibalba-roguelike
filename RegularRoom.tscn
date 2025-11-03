@@ -1,0 +1,40 @@
+[gd_scene load_steps=3 format=3 uid="uid://c3g6x2pfyckp3"]
+
+[ext_resource type="Script" path="res://RegularRoom.gd" id="1_p3hst"]
+[ext_resource type="PackedScene" path="res://Player.tscn" id="2_7lco1"]
+[ext_resource type="PackedScene" path="res://Door.tscn" id="3_iy0po"]
+
+[node name="RegularRoom" type="Node2D"]
+script = ExtResource("1_p3hst")
+
+[node name="Player" parent="." instance=ExtResource("2_7lco1")]
+position = Vector2(800, 600)
+
+[node name="Background" type="ColorRect" parent="."]
+z_index = -10
+offset_right = 1600
+offset_bottom = 1200
+color = Color(0.4, 0.2, 0.3, 1)
+
+[node name="RoomWalls" type="Line2D" parent="."]
+points = PackedVector2Array(100, 100, 1500, 100, 1500, 1100, 100, 1100, 100, 100)
+width = 10.0
+default_color = Color.WHITE
+
+[node name="Door1" parent="." instance=ExtResource("3_iy0po")]
+position = Vector2(800, 120)
+
+[node name="Door2" parent="." instance=ExtResource("3_iy0po")]
+position = Vector2(1480, 400)
+
+[node name="Door3" parent="." instance=ExtResource("3_iy0po")]
+position = Vector2(1480, 800)
+
+[node name="Door4" parent="." instance=ExtResource("3_iy0po")]
+position = Vector2(800, 1080)
+
+[node name="Door5" parent="." instance=ExtResource("3_iy0po")]
+position = Vector2(120, 800)
+
+[node name="Door6" parent="." instance=ExtResource("3_iy0po")]
+position = Vector2(120, 400)
