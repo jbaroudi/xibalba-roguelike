@@ -7,6 +7,10 @@
 [node name="RegularRoom" type="Node2D"]
 script = ExtResource("1_p3hst")
 
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(800, 600)
+enabled = true
+
 [node name="Player" parent="." instance=ExtResource("2_7lco1")]
 position = Vector2(800, 600)
 
