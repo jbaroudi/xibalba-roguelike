@@ -34,7 +34,7 @@ A simple roguelike game built in Godot 4.5 where you explore interconnected room
 
 ## File Structure
 
-- `Level0Room.tscn/gd`: Starting room with tree entrance
+- `Town.tscn/gd`: Starting room with tree entrance
 - `HiveHall.tscn/gd`: Central hub with 6 doors
 - `RegularRoom.tscn/gd`: Template for interconnected rooms
 - `Player.tscn/gd`: Character controller with movement and interaction
@@ -45,7 +45,7 @@ A simple roguelike game built in Godot 4.5 where you explore interconnected room
 
 1. Open the project in Godot 4.5
 2. Press F5 or click "Play" to run the game
-3. The main scene is automatically set to `Level0Room.tscn`
+3. The main scene is automatically set to `Town.tscn`
 
 ## Game Mechanics
 

@@ -4,7 +4,7 @@ extends Node
 
 signal scene_changed(new_scene)
 
-var current_room_id = "level0"
+var current_room_id = "town"
 var visited_rooms = {}
 var locked_doors = {}
 var flag_room_id = ""
@@ -13,7 +13,7 @@ var created_rooms = 0
 
 # Room types
 enum RoomType {
-	LEVEL0,
+	TOWN,
 	HIVE_HALL,
 	REGULAR_ROOM
 }

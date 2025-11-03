@@ -102,6 +102,43 @@ func create_door_texture():
 		x2.rotation = deg_to_rad(-45)
 		sprite.add_child(x2)
 
+func create_entrance_door():
+	# Remove any existing children from sprite
+	for child in sprite.get_children():
+		child.queue_free()
+	
+	# Create a gray door to indicate it's an entrance/exit
+	var door_rect = ColorRect.new()
+	door_rect.color = Color.GRAY
+	door_rect.size = Vector2(24, 36)
+	door_rect.position = Vector2(-12, -18)
+	sprite.add_child(door_rect)
+	
+	# Add darker frame to distinguish it
+	var frame_top = ColorRect.new()
+	frame_top.color = Color.DIM_GRAY
+	frame_top.size = Vector2(26, 2)
+	frame_top.position = Vector2(-13, -19)
+	sprite.add_child(frame_top)
+	
+	var frame_bottom = ColorRect.new()
+	frame_bottom.color = Color.DIM_GRAY
+	frame_bottom.size = Vector2(26, 2)
+	frame_bottom.position = Vector2(-13, 18)
+	sprite.add_child(frame_bottom)
+	
+	var frame_left = ColorRect.new()
+	frame_left.color = Color.DIM_GRAY
+	frame_left.size = Vector2(2, 40)
+	frame_left.position = Vector2(-13, -19)
+	sprite.add_child(frame_left)
+	
+	var frame_right = ColorRect.new()
+	frame_right.color = Color.DIM_GRAY
+	frame_right.size = Vector2(2, 40)
+	frame_right.position = Vector2(11, -19)
+	sprite.add_child(frame_right)
+
 func update_door_state():
 	var is_locked = GameManager.is_door_locked(GameManager.current_room_id, door_id)
 	var can_create = GameManager.can_create_new_room()

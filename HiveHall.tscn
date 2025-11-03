@@ -19,40 +19,40 @@ color = Color(0.3, 0.3, 0.3, 1)
 [node name="CenterHex" type="Polygon2D" parent="."]
 position = Vector2(800, 600)
 color = Color(0.5, 0.5, 0.5, 1)
-polygon = PackedVector2Array(-100, -174, 100, -174, 200, 0, 100, 174, -100, 174, -200, 0)
+polygon = PackedVector2Array(-80, -140, 80, -140, 160, 0, 80, 140, -80, 140, -160, 0)
 
 [node name="Door1" parent="." instance=ExtResource("3_l8h5f")]
-position = Vector2(800, 300)
+position = Vector2(800, 350)
 door_id = "door1"
 target_scene = "res://RegularRoom.tscn"
 target_room_id = "room_1"
 
 [node name="Door2" parent="." instance=ExtResource("3_l8h5f")]
-position = Vector2(1100, 450)
+position = Vector2(1050, 475)
 door_id = "door2"
 target_scene = "res://RegularRoom.tscn"
 target_room_id = "room_2"
 
 [node name="Door3" parent="." instance=ExtResource("3_l8h5f")]
-position = Vector2(1100, 750)
+position = Vector2(1050, 725)
 door_id = "door3"
 target_scene = "res://RegularRoom.tscn"
 target_room_id = "room_3"
 
 [node name="Door4" parent="." instance=ExtResource("3_l8h5f")]
-position = Vector2(800, 900)
+position = Vector2(800, 850)
 door_id = "door4"
-target_scene = "res://RegularRoom.tscn"
-target_room_id = "room_4"
+target_scene = "res://Town.tscn"
+target_room_id = "town"
 
 [node name="Door5" parent="." instance=ExtResource("3_l8h5f")]
-position = Vector2(500, 750)
+position = Vector2(550, 725)
 door_id = "door5"
 target_scene = "res://RegularRoom.tscn"
 target_room_id = "room_5"
 
 [node name="Door6" parent="." instance=ExtResource("3_l8h5f")]
-position = Vector2(500, 450)
+position = Vector2(550, 475)
 door_id = "door6"
 target_scene = "res://RegularRoom.tscn"
 target_room_id = "room_6"

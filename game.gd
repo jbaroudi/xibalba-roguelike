@@ -9,4 +9,4 @@ func _ready():
 	print("Find the golden flag hidden in one of the rooms!")
 	
 	# Start the game by loading the initial scene
-	get_tree().change_scene_to_file("res://Level0Room.tscn")
+	get_tree().change_scene_to_file("res://Town.tscn")

@@ -82,6 +82,11 @@ func _physics_process(_delta):
 		velocity = Vector2.ZERO
 	
 	move_and_slide()
+	
+	# Apply screen boundaries (assuming 1600x1200 screen size)
+	var screen_margin = 20  # Keep player away from exact edge
+	position.x = clamp(position.x, screen_margin, 1600 - screen_margin)
+	position.y = clamp(position.y, screen_margin, 1200 - screen_margin)
 
 func _input(event):
 	# Handle interaction using multiple keys
